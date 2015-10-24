@@ -3,6 +3,61 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="padding">
-    Peta
+    <ion-item ng-repeat="laporan in laporans">
+        {{laporan.nama}}
+      </ion-item>
   </ion-content>
+  <button class="button-icon button bottom-right" ng-click="newLaporan()" style="z-index:300; position:fixed; bottom: 20px; right:20px;">
+        <i class="icon ion-compose"></i>
+      </button>
+      <script id="new-laporan.html" type="text/ng-template">
+
+  <div class="modal">
+
+    <!-- Modal header bar -->
+    <ion-header-bar class="bar-secondary">
+      <h1 class="title">Pengaduan</h1>
+      <button class="button button-clear button-positive" ng-click="closeNewLaporan()">Cancel</button>
+    </ion-header-bar>
+
+    <!-- Modal content area -->
+    <ion-content>
+
+      <form ng-submit="createLaporan(laporan)">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="Nama" ng-model="laporan.nama">
+          </label>
+          
+          <label class="item item-input">
+            <input type="tel" placeholder="Nomor Telepon" ng-model="laporan.nomor">
+          </label>
+      
+      
+          <label class="item item-input item-select">
+          	<select ng-model="laporan.tipe" placeholder="Tipe">
+          		<option value='1'>Premanisme</option>
+		        <option value='2'>Pencurian</option>
+		        <option value='3'>Penipuan</option>
+		        <option value='4'>Penculikan</option>
+		        <option value='5'>Lainnya</option>
+        	</select>
+          </label>
+      
+          <label class="item item-input">
+            <input type="text" placeholder="Deskripsikan keluhan anda" ng-model="laporan.deskripsi">
+          </label>
+        </div>
+    
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Adukan!</button>
+        </div>
+    
+      </form>
+
+    </ion-content>
+
+  </div>
+
+</script>
 </ion-view>

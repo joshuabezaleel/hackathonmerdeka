@@ -1,2 +1,8 @@
 /* Styles go here */
+.icon {
+	display: inline-block;
+}
 
+i.icon.ion-ios7-telephone-outline {
+	font-size: 100px;
+}
