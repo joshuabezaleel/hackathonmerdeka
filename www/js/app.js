@@ -33,7 +33,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
       views: {
         'menuContent' :{
           templateUrl: "templates/peta.html",
-          controller: 'PetaCtrl'
+          controller: 'MapCtrl'
         }
       }
     })
