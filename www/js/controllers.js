@@ -1,4 +1,4 @@
-var API_URL = "http://localhost:8000/iscrime/";
+var API_URL = "http://cb121c82.ngrok.io/iscrime/";
 
 angular.module('starter.controllers', [])
 
@@ -87,7 +87,7 @@ angular.module('starter.controllers', [])
 
           var marker = new google.maps.Marker({
             position: new google.maps.LatLng(datum.lat,datum.lng),
-            content : "<b>Deskripsi</b> : <p style='width : 300px;'>"+ datum.deskripsi + "</p><img style='padding-left : 75%;'src='http://localhost:8100/"+iconURL+"' />",
+            content : "<b>Deskripsi</b> : <p style='width : 300px;'>"+ datum.deskripsi + "</p><img style='padding-left : 75%;'src='"+iconURL+"' />",
             icon : iconKategori,
           });
 
