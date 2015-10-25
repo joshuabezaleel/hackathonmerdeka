@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
@@ -8,27 +7,57 @@
     <link data-require="ionic@1.0.0-beta.1" data-semver="1.0.0-beta.1" rel="stylesheet" href="http://code.ionicframework.com/1.0.0-beta.1/css/ionic.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script data-require="ionic@1.0.0-beta.1" data-semver="1.0.0-beta.1" src="http://code.ionicframework.com/1.0.0-beta.1/js/ionic.bundle.js"></script>
+    <!-- include after ionic.css and ionic.bundle.js -->
+    <link href="lib/ionic-filter-bar/dist/ionic.filter.bar.min.css" rel="stylesheet">
+    <script src="lib/ionic-filter-bar/dist/ionic.filter.bar.min.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/highcharts-ng/dist/highcharts-ng.js"></script>
     <script src="cordova.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/markerclusterer.js"></script>
     <script src="js/app.js"></script>
+    <script src="http://code.highcharts.com/highcharts.src.js"></script>
+    <script src="http://code.highcharts.com/adapters/standalone-framework.js"></script>
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyBEtu36ZZNMuHcJ4Cq5TnTz4KtwisKIyjc&sensor=true"></script>
     <script src="js/controllers.js"></script>
-
     <style>
-        .bar-cariaman{
-          border-color: #CC2311;
-          background-color: #EF4E3A;
-          background-image: linear-gradient(0deg, #CC2311, #CC2311 50%, transparent 50%);
-          color: #FFF;
-        }
+    .bar-cariaman{
+    border-color: #66A7C5;
+    background-color: #66A7C5;
+    background-image: linear-gradient(0deg, #66A7C5, #66A7C5 50%, transparent 50%);
+    color: #FFF;
+    }
+    @font-face {
+    font-family: 'RobotoCondensed';
+    src: url('font/RobotoCondensed-Regular.ttf');
+    }
+    @font-face {
+    font-family: 'RobotoCondensed';
+    font-weight: bold;
+    src: url('font/RobotoCondensed-Bold.ttf');
+    }
+    body{
+    font-family: 'RobotoCondensed', sans-serif;
+    font-size : 14pt;
+    }
+    h1{
+    font-family: 'RobotoCondensed', sans-serif;
+    font-weight: 700;
+    font-size : 30pt;
+    }
+    h2{
+    font-family: 'RobotoCondensed', sans-serif;
+    font-weight: 700;
+    font-size : 24pt;
+    }
+    .title_hack.cariaman {
+    background-color: #fff;
+    }
+    
     </style>
   </head>
-
   <body ng-app="starter">
     <ion-nav-view></ion-nav-view>
   </body>
-
 </html>

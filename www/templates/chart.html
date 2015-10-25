@@ -3,6 +3,45 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <h1>Pantau</h1>
+  	 <label class="item item-input item-select">
+  	 		Pilih jenis kejahatan
+          	<select ng-model="chart.tipe.kejahatan" ng-change="removeRandomSeries();addSeries()" style="positition:fixed;z-index:300;right:20px">
+          		<option value='1'>Premanisme</option>
+		        <option value='2'>Pencurian</option>
+		        <option value='3'>Penipuan</option>
+		        <option value='4'>Penculikan</option>
+		        <option value='5'>Lainnya</option>
+		    
+        	</select>
+          </label>
+
+          <label class="item item-input item-select">
+          	Pilih kecamatan
+          	<select ng-model="chart.kecamatan" ng-change="removeRandomSeries();addSeries()">
+          		<option value='1'>Sukasari</option>
+		        <option value='2'>Sukajadi</option>
+		        <option value='3'>Cicendo</option>
+		        <option value='4'>Andir</option>
+		        <option value='5'>Cidadap</option>
+		        <option value='5'>Coblong</option>
+		        <option value='5'>Bandung Wetan</option>
+		        <option value='5'>Sumur Bandung</option>
+		        <option value='5'>Cibeunying</option>
+		        <option value='5'>Kiaracondong</option>
+		        <option value='5'>Batununggal</option>
+		        <option value='5'>Lengkong</option>
+		        <option value='5'>Regol</option>
+		        <option value='5'>Astananyar</option>
+		        <option value='5'>Bojongloa Kaler</option>
+		        <option value='5'>Babakan Ciamis</option>
+		        <option value='5'>Bandung Kulon</option>
+		        <option value='5'>Antapani</option>
+		        <option value='5'>Arcamanik</option>
+		        <option value='5'>Ujungberung</option>
+		        <option value='5'>Cibiru</option>
+		        <option value='5'>Rancasari</option>
+        	</select>
+          </label>
+    <highchart id="chart1" config="chartConfig"></highchart>
   </ion-content>
 </ion-view>

@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
+angular.module('starter', ['ionic', 'starter.controllers','ngCordova','highcharts-ng','jett.ionic.filter.bar'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -47,11 +47,12 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
       }
     })
 
-    .state('app.lostnfound', {
-      url: "/lostnfound",
+    .state('app.awasi', {
+      url: "/awasi",
       views: {
         'menuContent' :{
-          templateUrl: "templates/lostnfound.html"
+          templateUrl: "templates/awasi.html",
+          controller: 'AwasiCtrl'
         }
       }
     })
@@ -60,7 +61,8 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
       url: "/chart",
       views: {
         'menuContent' :{
-          templateUrl: "templates/chart.html"
+          templateUrl: "templates/chart.html",
+          controller: 'ChartCtrl'
         }
       }
     })
