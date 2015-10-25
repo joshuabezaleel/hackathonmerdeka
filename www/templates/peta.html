@@ -2,7 +2,14 @@
 <ion-nav-buttons side="left">
 <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
 </ion-nav-buttons>
-
+<div class="padding" style="position:fixed;top:20px;right:5px;left:5px;z-index:200;">
+<div class="list list-inset">
+<label class="item item-input">
+<i class="icon ion-search placeholder-icon"></i>
+<input type="text" placeholder="Search...">
+</label>
+</div>
+</div>
 <div id="map" style="width:100%;height:100%;">
   
 </div>
@@ -32,7 +39,7 @@
       
       <label class="item item-input item-select">
         <select ng-model="laporan.tipe" placeholder="Tipe">
-          <option value='1'>Premanisme</option>
+          <option value='1' selected='selected'>Premanisme</option>
           <option value='2'>Pencurian</option>
           <option value='3'>Penipuan</option>
           <option value='4'>Penculikan</option>

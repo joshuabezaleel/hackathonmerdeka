@@ -17,7 +17,7 @@ angular.module('starter.controllers', [])
     $.get(ajaxURL,function(mData){
       var data = JSON.parse(mData);
       for(var i in data){
-        var newData = '<div style="margin-top : 5px;"></div><div class="item" style="box-shadow: 0px 1px 2px #888888;"><div class="text-center"></div><div class="text-left" ><h2>'+data[i].tipe+'</h2></div>'+data[i].kecamatan+' , '+data[i].tanggal+'<p>'+data[i].deskripsi+'</p></div>';
+        var newData = '<div style="margin-top : 5px;"></div><div class="item" style="box-shadow: 0px 1px 2px #888888;"><div class="text-center"></div><div class="text-left" ><h2>'+data[i].tipe+'</h2></div>'+data[i].kecamatan+' , '+data[i].tanggal+'<p style="white-space :normal;">'+data[i].deskripsi+'</p></div>';
         $("#latest").append(newData);
       }
     });  
@@ -123,7 +123,7 @@ angular.module('starter.controllers', [])
           });
 
         $scope.laporanModal.hide();
-        laporan.tipe = "";
+        laporan.tipe = "1";
         laporan.deskripsi = "";
       };
 
@@ -144,6 +144,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ChartCtrl', function($scope){
+  $scope.chart.tipe.kejahatan = 1;
+  $scope.chart.kecamatan = 1;
   $scope.addPoints = function () {
         var seriesArray = $scope.chartConfig.series
         var rndIdx = Math.floor(Math.random() * seriesArray.length);
@@ -191,8 +193,22 @@ angular.module('starter.controllers', [])
         title: {
             text: 'Diagram persebaran kejahatan'
         },
-
-        loading: false
+        loading: false,
+        xAxis : {
+          type: 'datetime',
+            dateTimeLabelFormats: { // don't display the dummy year
+                month: '%e. %b',
+                year: '%b'
+            },
+            title: {
+                text: 'Waktu',
+            }
+        },
+        yAxis : {
+          title: {
+                text: 'Jumlah Kejahatan',
+          }
+        }
     }
 
 });
