@@ -142,6 +142,17 @@ angular.module('starter.controllers', [])
     });
 })
 
+.controller('ProfileCtrl',function ($scope,$cordovaGeolocation){
+  var options = {timeout: 10000, enableHighAccuracy: true};
+  $cordovaGeolocation.getCurrentPosition(options).then(function(position){
+    var ajaxURL = API_URL+'get_profile?lat='+position.coords.latitude+'&lng='+position.coords.longitude;
+    $.get(ajaxURL,function(mData){
+      console.log(mData);
+      var data = JSON.parse(mData);
+      $('#profile').append('<p style="white-space :normal;">Anda sedang berada di Kecamatan <b>'+data.kecamatan+'.</b> Berhati-hatilah, sistem kami mencatat ada '+data.jumlah+' laporan kejahatan.</p><p style="white-space :normal;">Daerah terawan saat ini:<b>'+data.top_1+','+data.top_2+','+data.top_3+'</b></p>');
+    });
+  });
+})
 .controller('ChartCtrl', function($scope){
   $scope.tipe="1";
   $scope.kecamatan="1";

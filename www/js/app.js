@@ -43,6 +43,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova','highchart
       views: {
         'menuContent' :{
           templateUrl: "templates/profil.html",
+          controller:'ProfileCtrl',
         }
       }
     })
