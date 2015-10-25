@@ -34,11 +34,9 @@ angular.module('starter.controllers', [])
 	}
 	function onSuccess()
 	{
-	    alert('onSuccess');
 	}
 	function onError()
 	{
-	 	alert('onError');
 	}
 	
 })
@@ -111,6 +109,7 @@ angular.module('starter.controllers', [])
       });
 
       // Called when the form is submitted
+      $scope.tipe="1";
       $scope.createLaporan = function(laporan) {
           var ajaxURL= API_URL + 'api_post';
           var postData = {nama : laporan.nama,telepon : laporan.nomor,tipe_id : laporan.tipe, deskripsi : laporan.deskripsi, lat : position.coords.latitude, lng : position.coords.longitude};
@@ -144,8 +143,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ChartCtrl', function($scope){
-  $scope.chart.tipe.kejahatan = 1;
-  $scope.chart.kecamatan = 1;
+  $scope.tipe="1";
+  $scope.kecamatan="1";
   $scope.addPoints = function () {
         var seriesArray = $scope.chartConfig.series
         var rndIdx = Math.floor(Math.random() * seriesArray.length);

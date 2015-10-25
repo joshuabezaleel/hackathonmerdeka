@@ -5,7 +5,7 @@
   <ion-content class="has-header">
   	 <label class="item item-input item-select">
   	 		Pilih jenis kejahatan
-          	<select ng-model="chart.tipe.kejahatan" ng-change="removeRandomSeries();addSeries()" style="positition:fixed;z-index:300;right:20px">
+          	<select ng-model="tipe" ng-change="removeRandomSeries();addSeries()" style="positition:fixed;z-index:300;right:20px">
           		<option value='1' selected="selected">Premanisme</option>
 		        <option value='2'>Pencurian</option>
 		        <option value='3'>Penipuan</option>
@@ -17,7 +17,7 @@
 
           <label class="item item-input item-select">
           	Pilih kecamatan
-          	<select ng-model="chart.kecamatan" ng-change="removeRandomSeries();addSeries()">
+          	<select ng-model="kecamatan" ng-change="removeRandomSeries();addSeries()">
           		<option value='1' selected="selected">Sukasari</option>
 		        <option value='2'>Sukajadi</option>
 		        <option value='3'>Cicendo</option>
