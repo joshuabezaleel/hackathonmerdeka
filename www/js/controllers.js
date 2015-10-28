@@ -1,4 +1,4 @@
-var API_URL = "http://cb121c82.ngrok.io/iscrime/";
+var API_URL = "http://8e40ee8f.ngrok.io";
 
 angular.module('starter.controllers', [])
 
